@@ -1,0 +1,13 @@
+name: 'Set environment variables'
+
+inputs:
+  varFilePath:
+    description: 'Ruta del archivo al archivo o directorio variable. El valor predeterminado es ./.github/vars/* si no se especifica ninguno y se ejecuta contra cada archivo en ese directorio.'
+    required: false
+    default: ./.github/vars/*
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        cat ${{ inputs.varFilePath }} >> $GITHUB_ENV
+      shell: bash

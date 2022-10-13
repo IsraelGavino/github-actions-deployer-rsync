@@ -2,30 +2,29 @@
 
 # Variables
 PATH_PUBLIC="${1}"
-PATH_DEPLOY="${1}/deploy-ftp"
-USERNAME="${2}"
-SHA_PREVIOUS="${3}"
-
-# Directorio deploy
-if [ ! -d $PATH_DEPLOY ]; then 
-	mkdir -p $PATH_DEPLOY 
-fi
-
-# Nos posicionamos en el directorio
-cd $PATH_DEPLOY
+SHA_CURRENT=${2}
 
 # Directorio metadata
-if [ ! -d .dep ]; then 
-	mkdir .dep;
+if [ ! -d $PATH_PUBLIC/.dep ]; then 
+	mkdir $PATH_PUBLIC/.dep;
+fi
+
+# Directorio .clone
+if [ ! -d $PATH_PUBLIC/.dep/.clone ]; then 
+	mkdir $PATH_PUBLIC/.dep/.clone;
+fi
+
+# Directorio releases
+if [ ! -d $PATH_PUBLIC/.dep/releases ]; then 
+	mkdir $PATH_PUBLIC/.dep/releases;
 fi
 
 # Si no existe informacion de releases
-if [ ! -f .dep/releases ]; then 
-	date=$(date +%Y-%m-%d_%H:%M:%S)
-	echo "$date,$SHA_PREVIOUS,$USERNAME" >> .dep/releases
+if [ ! -f $PATH_PUBLIC/.dep/latest_release ]; then 
+	echo $SHA_CURRENT > $PATH_PUBLIC/.dep/latest_release
 fi
 
-# Directorio .trash
-if [ ! -d .trash ]; then 
-	mkdir .trash;
+# Si no existe htaccess
+if [ ! -f $PATH_PUBLIC/.dep/.htaccess ]; then 
+	echo "Deny from all" > $PATH_PUBLIC/.dep/.htaccess
 fi
