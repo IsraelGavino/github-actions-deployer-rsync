@@ -1,10 +1,6 @@
-name: 'Github actions deployer'
-description: 'Deployment Environment, inspiration deployer php'
+name: 'Github actions deployer rsync'
+description: 'Deployment Environment rsync'
 inputs:
-  CLEAN_UP:
-    type: boolean
-    required: false
-    default: false
   SSH_HOST:
     description: 'Host SSH'
     required: true
@@ -18,56 +14,18 @@ inputs:
   SSH_KEY:
     description: 'Key SSH'
     required: true
-  KEEP_RELEASES:
-    description: 'Number of releases stored'
-    required: false
-    default: 5
   PATH_PUBLIC:
     description: 'Path deployment'
     required: true
-  DIRS_SHARE:
-    description: 'List of dirs what will be shared between releases'
-    required: false
-    default: ''
-  FILES_SHARE:
-    description: 'List of files what will be shared between releases'
+  FILES_IGNORE:
+    description: 'List of directories and files to be ignored between releases'
     required: false
     default: ''
   BRANCH_NAME:
     description: 'Branch name deployment'
     required: true
-  CPANEL_URL:
-    description: 'Cpanel URL'
-    required: false
-    default: ''
-  CPANEL_USER:
-    description: 'Cpanel User'
-    required: false
-    default: ''
-  CPANEL_KEY:
-    description: 'Cpanel token key'
-    required: false
-    default: ''
-  DATABASE_HOST:
-    description: 'Database host'
-    required: false
-    default: ''
-  DATABASE_NAME:
-    description: 'Database name'
-    required: false
-  DATABASE_USER:
-    description: 'Database user'
-    required: false
-  DATABASE_PASSWORD:
-    description: 'Database password'
-    required: false
-    default: ''
   DEPLOY_DOMAIN:
     description: 'Deploy domain'
-    required: false
-    default: ''
-  DEPLOY_SUBDOMAIN:
-    description: 'Deploy subdomain'
     required: false
     default: ''
   USERNAME:
@@ -79,32 +37,37 @@ inputs:
   GITHUB_REPOSITORY:
     description: 'Repository Github'
     required: true
+  KEEP_RELEASES:
+    description: 'Number of releases stored'
+    required: false
+    default: 5
+  COMPOSER:
+    description: 'Perform composer'
+    type: boolean
+    required: false
+    default: false
+  COMPOSER_RUN_SCRIPTS:
+    description: 'List of composer run script commands'
+    required: false
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.CLEAN_UP }}
     - ${{ inputs.SSH_HOST }}
     - ${{ inputs.SSH_PORT }}
     - ${{ inputs.SSH_USER }}
     - "${{ inputs.SSH_KEY }}"
-    - ${{ inputs.KEEP_RELEASES }}
     - ${{ inputs.PATH_PUBLIC }}
-    - ${{ inputs.DIRS_SHARE }}
-    - ${{ inputs.FILES_SHARE }}
+    - ${{ inputs.FILES_IGNORE }}
     - ${{ inputs.BRANCH_NAME }}
-    - ${{ inputs.CPANEL_URL }}
-    - ${{ inputs.CPANEL_USER }}
-    - "${{ inputs.CPANEL_KEY }}"
-    - ${{ inputs.DATABASE_HOST }}
-    - ${{ inputs.DATABASE_NAME }}
-    - ${{ inputs.DATABASE_USER }}
-    - ${{ inputs.DATABASE_PASSWORD }}
     - ${{ inputs.DEPLOY_DOMAIN }}
-    - ${{ inputs.DEPLOY_SUBDOMAIN }}    
     - ${{ inputs.USERNAME }}
     - ${{ inputs.GITHUB_TOKEN }}
     - ${{ inputs.GITHUB_REPOSITORY }}
+    - ${{ inputs.KEEP_RELEASES }}
+    - ${{ inputs.COMPOSER }}
+    - ${{ inputs.COMPOSER_RUN_SCRIPTS }}
 branding:
   icon: 'upload-cloud'
   color: 'blue'
