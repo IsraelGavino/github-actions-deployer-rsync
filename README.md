@@ -57,7 +57,7 @@ COMPOSER_RUN_SCRIPTS \`
 
 ### 🐳 Ejemplo
 
-docker build --no-cache --progress=plain -t github-actions-deployer-rsync . && docker run --rm github-actions-deployer-rsync:latest \
+`docker build --no-cache --progress=plain -t github-actions-deployer-rsync . && docker run --rm github-actions-deployer-rsync:latest \
 web.com \
 22 \
 user \
@@ -71,7 +71,7 @@ token \
 jose-sampedro/prueba-github \
 5 \
 true \
-installs \
+installs `
 
 ### 👩‍💻 Parametros
 
