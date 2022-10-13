@@ -3,10 +3,10 @@
 set -e
 
 # Variables
-SSH_HOST="${1}"
-SSH_PORT="${2}"
-SSH_USER="${3}"
-SSH_KEY="${4}"
+SSH_HOST=$(echo "${1}" | tr -d '\n')
+SSH_PORT=$(echo "${2}" | tr -d '\n')
+SSH_USER=$(echo "${3}" | tr -d '\n')
+SSH_KEY=$(echo "${4}" | tr -d '\n')
 PATH_PUBLIC="${5}"
 FILES_IGNORE="${6}"
 BRANCH_NAME="${7}"
