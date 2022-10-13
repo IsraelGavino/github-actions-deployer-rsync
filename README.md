@@ -12,8 +12,6 @@
 <p align="center">
   Herramienta de <strong>despliegue</strong> escrita en bash y usando <strong>rsync</strong> encapsulada en Docker para funcionar en cualquier lugar.
   <br />
-  <br />
-  Implementación mediante rync</p>
 </p>
 
 ## 🚀 Configuración
@@ -21,7 +19,7 @@
 ### 🐳 Herramientas necesarias
 
 1. Instalar Docker
-2. Clonar el proyecto: `git clone https://github.com/denoxES/github-actions-deployer-rsync.git`
+2. Clonar el proyecto: `git clone https://github.com/jose-sampedro/github-actions-deployer-rsync.git`
 3. Moverse al directorio: `cd github-actions-deployer-rsync`
 
 
