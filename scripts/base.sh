@@ -24,7 +24,9 @@ ssh_config() {
 	chown -R ${USER}:${GROUP} ~/.ssh/
 
 	# Añadimos a servidores conocidos
-	ssh-keyscan -p ${SSH_PORT} -t rsa,dsa ${SSH_HOST_IP} >> ~/.ssh/known_hosts
+	a="ssh-keyscan -p ${SSH_PORT} -t rsa,dsa ${SSH_HOST_IP} >> ~/.ssh/known_hosts"
+
+	echo $a
 }
 
 ssh_execute_remote() {
