@@ -21,24 +21,6 @@ USER=$(id -u -n)
 GROUP=$(id -g -n)
 SSH_HOST_IP=$(dig +short ${SSH_HOST})
 
-
-echo $SSH_HOST
-echo $SSH_PORT
-echo $SSH_USER
-echo $SSH_KEY
-echo $PATH_PUBLIC
-echo $FILES_IGNORE
-echo $BRANCH_NAME
-echo $DEPLOY_DOMAIN
-echo $USERNAME
-echo $GITHUB_TOKEN
-echo $GITHUB_REPOSITORY
-echo $KEEP_RELEASES
-echo $COMPOSER
-echo $COMPOSER_RUN_SCRIPTS
-
-exit 1
-
 # Librerias
 . "/scripts/base.sh"
 
