@@ -24,7 +24,8 @@ SSH_HOST_IP=$(dig +short ${SSH_HOST})
 # Librerias
 . "/scripts/base.sh"
 
-echo $SSH_PORT
+echo $PATH_PUBLIC
+echo 'adad'
 exit 1
 
 echo "🕸️ Configuramos SSH"
