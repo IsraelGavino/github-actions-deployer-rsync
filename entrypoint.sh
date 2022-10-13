@@ -24,6 +24,15 @@ SSH_HOST_IP=$(dig +short ${SSH_HOST})
 # Librerias
 . "/scripts/base.sh"
 
+
+echo "$SSH_KEY"
+echo $USER
+echo $GROUP
+echo $SSH_HOST
+echo $SSH_PORT
+echo $SSH_HOST_IP
+exit 1
+
 echo "🕸️ Configuramos SSH"
 ssh_config "$SSH_KEY" $USER $GROUP $SSH_HOST $SSH_PORT $SSH_HOST_IP
 
