@@ -23,7 +23,7 @@ SSH_HOST_IP=$(dig +short ${SSH_HOST})
 
 
 echo $SSH_HOST
-echo ${#var}
+echo ${#SSH_HOST}
 exit 1
 
 # Librerias
