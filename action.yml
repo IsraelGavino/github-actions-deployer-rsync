@@ -54,20 +54,20 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.SSH_HOST }}
-    - ${{ inputs.SSH_PORT }}
-    - ${{ inputs.SSH_USER }}
-    - "${{ inputs.SSH_KEY }}"
-    - ${{ inputs.PATH_PUBLIC }}
-    - ${{ inputs.FILES_IGNORE }}
-    - ${{ inputs.BRANCH_NAME }}
-    - ${{ inputs.DEPLOY_DOMAIN }}
-    - ${{ inputs.USERNAME }}
-    - ${{ inputs.GITHUB_TOKEN }}
-    - ${{ inputs.GITHUB_REPOSITORY }}
-    - ${{ inputs.KEEP_RELEASES }}
-    - ${{ inputs.COMPOSER }}
-    - ${{ inputs.COMPOSER_RUN_SCRIPTS }}
+    - ${{inputs.SSH_HOST}}
+    - ${{inputs.SSH_PORT}}
+    - ${{inputs.SSH_USER}}
+    - "${{inputs.SSH_KEY}}"
+    - ${{inputs.PATH_PUBLIC}}
+    - ${{inputs.FILES_IGNORE}}
+    - ${{inputs.BRANCH_NAME}}
+    - ${{inputs.DEPLOY_DOMAIN}}
+    - ${{inputs.USERNAME}}
+    - ${{inputs.GITHUB_TOKEN}}
+    - ${{inputs.GITHUB_REPOSITORY}}
+    - ${{inputs.KEEP_RELEASES}}
+    - ${{inputs.COMPOSER}}
+    - ${{inputs.COMPOSER_RUN_SCRIPTS}}
 branding:
   icon: 'upload-cloud'
   color: 'blue'
