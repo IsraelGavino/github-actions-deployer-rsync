@@ -25,7 +25,6 @@ SSH_HOST_IP=$(dig +short ${SSH_HOST})
 . "/scripts/base.sh"
 
 
-echo "$SSH_KEY"
 echo $USER
 echo $GROUP
 echo $SSH_HOST
