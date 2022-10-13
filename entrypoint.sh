@@ -21,11 +21,7 @@ USER=$(id -u -n)
 GROUP=$(id -g -n)
 SSH_HOST_IP=$(dig +short ${SSH_HOST})
 
-echo $SSH_HOST
-echo $SSH_HOST_IP
-echo 'adasd'
-dig ${SSH_HOST}
-echo '---'
+curl ifconfig.me
 exit 1
 
 # Librerias
