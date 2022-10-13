@@ -21,7 +21,9 @@ USER=$(id -u -n)
 GROUP=$(id -g -n)
 SSH_HOST_IP=$(dig +short ${SSH_HOST})
 
+echo 'aaa'
 echo $SSH_HOST
+echo 'bb'
 
 exit 1
 
