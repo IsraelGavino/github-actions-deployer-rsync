@@ -22,7 +22,8 @@ GROUP=$(id -g -n)
 SSH_HOST_IP=$(dig +short ${SSH_HOST})
 
 
-echo "$SSH_HOST" "$SSH_PORT" "$SSH_HOST_IP"
+echo $SSH_HOST
+echo ${#var}
 exit 1
 
 # Librerias
