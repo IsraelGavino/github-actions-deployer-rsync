@@ -3,27 +3,23 @@
 set -e
 
 # Variables
-SSH_HOST=$(echo ${1} | tr -d '\r')
-SSH_PORT="${2}"
-SSH_USER="${3}"
-SSH_KEY="${4}"
-PATH_PUBLIC="${5}"
-FILES_IGNORE="${6}"
-BRANCH_NAME="${7}"
-DEPLOY_DOMAIN="${8}"
-USERNAME="${9}"
-GITHUB_TOKEN="${10}"
-GITHUB_REPOSITORY="${11}"
-KEEP_RELEASES="${12}"
-COMPOSER="${13}"
-COMPOSER_RUN_SCRIPTS="${14}"
+SSH_HOST=$(echo "${1}" | tr -d '\r')
+SSH_PORT=$(echo "${2}" | tr -d '\r')
+SSH_USER=$(echo "${3}" | tr -d '\r')
+SSH_KEY=$(echo "${4}" | tr -d '\r')
+PATH_PUBLIC=$(echo "${5}" | tr -d '\r')
+FILES_IGNORE=$(echo "${6}" | tr -d '\r')
+BRANCH_NAME=$(echo "${7}" | tr -d '\r')
+DEPLOY_DOMAIN=$(echo "${8}" | tr -d '\r')
+USERNAME=$(echo "${9}" | tr -d '\r')
+GITHUB_TOKEN=$(echo "${10}" | tr -d '\r')
+GITHUB_REPOSITORY=$(echo "${11}" | tr -d '\r')
+KEEP_RELEASES=$(echo "${12}" | tr -d '\r')
+COMPOSER=$(echo "${13}" | tr -d '\r')
+COMPOSER_RUN_SCRIPTS=$(echo "${14}" | tr -d '\r')
 USER=$(id -u -n)
 GROUP=$(id -g -n)
 SSH_HOST_IP=$(dig +short ${SSH_HOST})
-
-echo $SSH_HOST
-echo ${#SSH_HOST}
-exit 1
 
 # Librerias
 . "/scripts/base.sh"
