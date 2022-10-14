@@ -3,7 +3,7 @@
 set -e
 
 # Variables
-SSH_HOST="${1}"
+SSH_HOST=$(echo ${1} | tr -d '\r')
 SSH_PORT="${2}"
 SSH_USER="${3}"
 SSH_KEY="${4}"
@@ -20,7 +20,6 @@ COMPOSER_RUN_SCRIPTS="${14}"
 USER=$(id -u -n)
 GROUP=$(id -g -n)
 SSH_HOST_IP=$(dig +short ${SSH_HOST})
-
 
 echo $SSH_HOST
 echo ${#SSH_HOST}
