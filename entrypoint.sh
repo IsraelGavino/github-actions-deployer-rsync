@@ -26,7 +26,6 @@ SSH_HOST_IP=$(dig +short ${SSH_HOST})
 
 echo "🕸️ Configuramos SSH"
 ssh_config "$SSH_KEY" $USER $GROUP $SSH_HOST $SSH_PORT $SSH_HOST_IP
-exit 1
 
 SHA_CURRENT=$(api_github_sha_commit_index $GITHUB_TOKEN $GITHUB_REPOSITORY $BRANCH_NAME 0)
 SHA_PREVIOUS=$(api_github_sha_commit_index $GITHUB_TOKEN $GITHUB_REPOSITORY $BRANCH_NAME 1)
