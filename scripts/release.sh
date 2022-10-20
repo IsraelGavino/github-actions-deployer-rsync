@@ -9,7 +9,7 @@ GITHUB_REPOSITORY="${4}"
 USERNAME="${5}"
 PATH_RELEASE="${6}"
 FILES_IGNORE="${7}"
-RSYNC_OPTIONS="--size-only --archive --compress --human-readable --progress --delete-after --info=DEL --exclude='.dep/' --exclude='.git*' --exclude='.git/' --exclude='README.md' --exclude='readme.md' --exclude='.gitignore'"
+RSYNC_OPTIONS="--size-only --quiet --archive --compress --human-readable --progress --delete-after --info=DEL --exclude='.dep/' --exclude='.git*' --exclude='.git/' --exclude='README.md' --exclude='readme.md' --exclude='.gitignore'"
 
 # Lo añadimos como array
 FILES_IGNORE=(`echo "${FILES_IGNORE}"`)
