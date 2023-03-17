@@ -19,7 +19,7 @@
 ### 🐳 Herramientas necesarias
 
 1. Instalar Docker
-2. Clonar el proyecto: `git clone https://github.com/jose-sampedro/github-actions-deployer-rsync.git`
+2. Clonar el proyecto: `git clone https://github.com/israelgavino/github-actions-deployer-rsync.git`
 3. Moverse al directorio: `cd github-actions-deployer-rsync`
 
 
@@ -111,12 +111,12 @@ jobs:
         uses: actions/checkout@v3
 
       - name: 🧾 Variables de entorno
-        uses: jose-sampedro/github-actions-deployer/set-envs-vars@v0.0.1
+        uses: israelgavino/github-actions-deployer/set-envs-vars@v0.0.1
         with:
           varFilePath: ./.github/vars/shared.env ./.github/vars/deploy-production.env
 
       - name: 🚀 Deployment
-        uses: jose-sampedro/github-actions-deployer-rsync@v0.0.1
+        uses: israelgavino/github-actions-deployer-rsync@v0.0.1
         with:
           SSH_HOST: ${{ env.SSH_HOST }}
           SSH_PORT: ${{ env.SSH_PORT }}
